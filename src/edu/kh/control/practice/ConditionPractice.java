@@ -86,37 +86,34 @@ public class ConditionPractice {
 		
 		double bmi = weight / ( height * height );
 		
-		System.out.println("BMI 지수 : " + bmi);
+		String result;
 		
 		
 		if ( bmi < 18.5 ) {
-			System.out.println("저체중");
+			result = "저체중";
 		}else if ( bmi >= 30 ) {
-			System.out.println("고도비만");
+			result = "고도비만";
 		}else if (bmi >= 18.5 && bmi <23) {
-			System.out.println("정상체중");
+			result = "정상체중";
 		}else {
-			System.out.println("과체중");
+			result = "과체중";
 		}
 		
+		System.out.println(result);
 		
 	}
 	
 	public void practice5() {
 		System.out.print("중간 고사 점수 : ");
-		int midterm = sc.nextInt();
+		double midterm = sc.nextDouble() * 0.2;
 		System.out.print("기말 고사 점수 : ");
-		int finalterm = sc.nextInt();
+	    double finalterm = sc.nextDouble() * 0.3;
 		System.out.print("과제 점수 : ");
-		int homework = sc.nextInt();
+		double homework = sc.nextDouble() * 0.3;
 	    System.out.print("출석 횟수 (/20): ");
-	    int check = sc.nextInt();
+	    Double check = sc.nextDouble();
 	    
-	    double midscore = midterm * 0.2 ;
-	    double finalscore = finalterm * 0.3 ;
-	    double hwscore = homework * 0.3 ;
-	    double checkscore = check;
-	    double total = midscore + finalscore + hwscore + checkscore;
+	    double total = midterm + finalterm + homework + check;
 	   
 	    String result;
 	    
@@ -126,13 +123,13 @@ public class ConditionPractice {
 	    	result = "출석 횟수를 잘못 입력하였습니다.";
 	    	System.out.printf(result);
 	    }else if(20 - check >= 20 * 0.3){
-	    	result = "출석 횟수 부족(%d/20)\n";
+	    	result = "출석 횟수 부족(%.0f/20)\n";
 	    	System.out.printf(result, check);
 	    }else {
-	    	System.out.printf("중간 고사 점수(20) : %.1f\n" , midscore);
-	    	System.out.printf("기말 고사 점수(20) : %.1f\n", finalscore);
-	    	System.out.printf("과제 점수(20) : %.1f\n" , hwscore);
-	    	System.out.printf("출석 점수(20) : %.1f\n", checkscore);
+	    	System.out.printf("중간 고사 점수(20) : %.1f\n" , midterm);
+	    	System.out.printf("기말 고사 점수(20) : %.1f\n", finalterm);
+	    	System.out.printf("과제 점수(20) : %.1f\n" , homework);
+	    	System.out.printf("출석 점수(20) : %.1f\n", check);
 	    	System.out.printf("총점 : %.1f\n" , total);
 	    	if(total < 70) {
 	    		result = "Fail [점수 미달]";
