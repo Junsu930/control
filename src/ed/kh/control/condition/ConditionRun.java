@@ -4,9 +4,13 @@ public class ConditionRun {
 
 	public static void main(String[] args) {
 		
-		ConditionExample ce = new ConditionExample();
+		ConditionExample condition = new ConditionExample();
 		
-		ce.ex2();
+		//condition.ex6();
+		
+		SwitchExample switchEx = new SwitchExample();
+		
+		switchEx.ex3();
 	}
 
 }
