@@ -59,11 +59,11 @@ public class ConditionPractice {
 		
 		switch(month) {
 		
-		case 1 ,3 ,5 ,7, 8, 10, 12 :
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
 			
 			System.out.printf("%d월은 31일까지 있습니다.", month); break;
 			
-		case 4, 6, 9, 11 :
+		case 4: case 6: case 9: case 11:
 			
 			System.out.printf("%d월은 30일까지 있습니다.", month); break;
 			
@@ -110,12 +110,13 @@ public class ConditionPractice {
 		System.out.print("과제 점수 : ");
 		int homework = sc.nextInt();
 	    System.out.print("출석 횟수 (/20): ");
-	    double check = sc.nextDouble();
+	    int check = sc.nextInt();
 	    
 	    double midscore = midterm * 0.2 ;
 	    double finalscore = finalterm * 0.3 ;
 	    double hwscore = homework * 0.3 ;
-	    double total = midscore + finalscore + hwscore + check;
+	    double checkscore = check;
+	    double total = midscore + finalscore + hwscore + checkscore;
 	   
 	    String result;
 	    
@@ -123,23 +124,24 @@ public class ConditionPractice {
 	    
 	    if(check > 20 || check < 0) {
 	    	result = "출석 횟수를 잘못 입력하였습니다.";
+	    	System.out.printf(result);
 	    }else if(20 - check >= 20 * 0.3){
-	    	System.out.printf("출석 횟수 부족(%d/20)", check);
+	    	result = "출석 횟수 부족(%d/20)\n";
+	    	System.out.printf(result, check);
 	    }else {
-	    	System.out.printf("중간 고사 점수(20) : %.2f" );
-	    	System.out.printf("기말 고사 점수(20) : %.2f");
-	    	System.out.printf("과제 점수(20) : %.2f");
-	    	System.out.printf("출석 점수(20) : %.2f");
-	    	System.out.printf("총점 : ");
+	    	System.out.printf("중간 고사 점수(20) : %.1f\n" , midscore);
+	    	System.out.printf("기말 고사 점수(20) : %.1f\n", finalscore);
+	    	System.out.printf("과제 점수(20) : %.1f\n" , hwscore);
+	    	System.out.printf("출석 점수(20) : %.1f\n", checkscore);
+	    	System.out.printf("총점 : %.1f\n" , total);
 	    	if(total < 70) {
-	    		
-	  
+	    		result = "Fail [점수 미달]";
+	    	}else {
+	    		result = "PASS";
 	    	}
 	    	
+	    	System.out.printf(result);	
 	    }
-	    
-	    
-				
 	}
 }
 
