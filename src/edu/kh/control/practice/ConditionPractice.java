@@ -67,11 +67,11 @@ public class ConditionPractice {
 			
 			System.out.printf("%d월은 30일까지 있습니다.", month); break;
 			
-		case 2 :
+		case 2:
 			
 			System.out.printf("%d월은 28일까지 있습니다.", month); break;
 			
-		default : 
+		default: 
 			
 			System.out.printf("%d월은 잘못 입력된 달입니다.", month); break;
 		}
@@ -111,7 +111,7 @@ public class ConditionPractice {
 		System.out.print("과제 점수 : ");
 		double homework = sc.nextDouble() * 0.3;
 	    System.out.print("출석 횟수 (/20): ");
-	    Double check = sc.nextDouble();
+	    double check = sc.nextDouble();
 	    
 	    double total = midterm + finalterm + homework + check;
 	   
