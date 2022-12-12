@@ -144,14 +144,10 @@ public class LoopPractice {
 		for(int i = 1; i <= input; i++) {
 			if( i%2 == 0 || i%3 == 0) {
 				System.out.print(i + " ");
-			}else {
-				continue;
-			}
-			
-			if( i%2 == 0 && i%3 ==0) {
+				if( i%2 == 0 && i%3 ==0) {
 				num++;
+				}
 			}
-			
 		}
 		System.out.println();
 		System.out.println("count : " + num );
@@ -209,6 +205,22 @@ public class LoopPractice {
 			System.out.println();
 		}
 	}
+	
+	/*public void practice12() {
+		
+		System.out.print("정수를 입력하시오 : ");
+		int input = sc.nextInt();
+		for(int row =1; row <= input; row++) {		
+			for(int col = 1; col <= input*2-1; col++) {
+			if(input-row>=col || input+row<=col) {
+				System.out.print(" ");
+				}else {
+					System.out.print("*");
+				}
+			}
+		}
+	}
+	*/
 	
 	public void practice13() {
 		
